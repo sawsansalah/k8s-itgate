@@ -1,0 +1,23 @@
+install https://kind.sigs.k8s.io/docs/user/quick-start
+nstallation Steps
+Step 1. Installing Docker
+$ sudo apt update
+$ sudo apt install apt-transport-https curl
+
+$ sudo apt install docker.io
+$ sudo systemctl enable docker
+$ sudo systemctl start docker
+$ docker --version
+$ sudo usermod -aG docker $USER
+$ newgrp docker
+
+# three node (two workers) cluster config
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+- role: worker
+- role: worker
+  
+  kind create cluster --config=config.yaml
+  

@@ -1,0 +1,19 @@
+## this is an xxx
+version:
+enabled: false
+###
+metadata:
+  name: nginx
+  version: v2
+  enabled: true
+  labels:
+    env: prod
+    tier: frontend
+
+###
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+  - name: web
+    image: web2   
