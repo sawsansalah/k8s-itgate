@@ -1,6 +1,14 @@
-kind create cluster --name kind-2
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+- role: worker
+- role: worker
 networking:
-  # the default CNI will not be installed
   disableDefaultCNI: true
+  podSubnet: 192.168.0.0/16
+  ====
+  Use the following commands to install Calico:
+
+kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.0/manifests/tigera-operator.yaml
+kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.26.0/manifests/custom-resources.yaml
