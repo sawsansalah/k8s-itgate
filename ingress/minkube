@@ -1,0 +1,7 @@
+choco install kubernetes-cli
+choco install minikube
+===
+note : need to install Virtualbox per windows
+minikube start --vm-driver=virtualbox
+minikube addons enable ingress
+
