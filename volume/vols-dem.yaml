@@ -7,7 +7,7 @@ metadata:
 spec:
   containers:
     - name: ubuntu1
-      image: ununtu
+      image: ubuntu
       command:
          - sleep
          - "3600"
@@ -16,7 +16,7 @@ spec:
           name: "vol"   
 
     - name: ubuntu2   
-      image: ununtu
+      image: ubuntu
       command:
          - sleep
          - "3600"     
