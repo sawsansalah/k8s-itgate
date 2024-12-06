@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    name: redis
+  name: redis
+spec:
+  containers:
+    - name: redis
+      image: redis
+      
+      volumeMounts:
+        - mountPath: "/usr/local/etc/"
+          name: "redis-storage"
+  volumes:
+    - name: "redis-storage"
