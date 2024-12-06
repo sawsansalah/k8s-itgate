@@ -10,7 +10,7 @@ spec:
       image: redis
       
       volumeMounts:
-        - mountPath: "/usr/local/etc/"
+        - mountPath: "/data/redis"
           name: "redis-storage"
   volumes:
     - name: "redis-storage"
