@@ -16,7 +16,7 @@ spec:
           name: "vol"   
 
     - name: ubuntu2   
-      image: ununtu2
+      image: ununtu
       command:
          - sleep
          - "3600"     
