@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: pv-storage
+  name: pv-storage-new
 spec:  
  capacity:
-    storage: 2Gi
+    storage: 1Gi
  accessModes:
     - ReadWriteOnce
  hostPath:
