@@ -5,8 +5,8 @@ metadata:
 spec:
   containers:
     - name: app
-      command: ["/bin/sh", "-c", "printenv"]
-      image: busybox:latest
+      command: ["/bin/sh", "-c", "sleep","2500"]
+      image: busybox:
       envFrom:
         - configMapRef:
             name: demo-config
