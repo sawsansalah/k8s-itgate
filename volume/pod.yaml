@@ -12,4 +12,4 @@ spec:
   volumes:
     - name: mypd
       persistentVolumeClaim:
-        claimName:  pvc-storage
+        claimName:  pvc-storage-new
