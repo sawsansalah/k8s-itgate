@@ -1,17 +1,4 @@
-Latest commit
-author
-Ahmed ElBakry
-Adding the working yamlfiles
-d9db5a5
- · 
-2 years ago
-History
-File metadata and controls
 
-Code
-
-Blame
-27 lines (27 loc) · 507 Bytes
 apiVersion: apps/v1
 kind: Deployment
 metadata:
