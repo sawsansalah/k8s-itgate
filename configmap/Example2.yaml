@@ -1,0 +1,16 @@
+kubectl create configmap my-cli-config \
+  --from-literal=APP_PORT=8080 \
+  --from-literal=APP_MODE=release
+  ---
+  apiVersion: v1
+kind: Pod
+metadata:
+  name: configmap-test-pod
+spec:
+  containers:
+  - name: test-container
+    image: busybox
+    command: ["sh", "-c", "echo $APP_PORT $APP_MODE && sleep 3600"]
+    envFrom:
+    - configMapRef:
+        name: my-cli-config
