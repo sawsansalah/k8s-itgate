@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: node-monitor
+spec:
+  selector:
+    matchLabels:
+      name: node-monitor
+  template:
+    metadata:
+      labels:
+        name: node-monitor
+    spec:
+      containers:
+      - name: node-monitor
+        image: prom/node-exporter
+        ports:
+        - containerPort: 9100
+~                                
