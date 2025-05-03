@@ -18,5 +18,5 @@ spec:
     spec:
       containers:
       - name: alpine
-        image: alpine:3.2
+        image: alpine
         command: ['sh', '-c', 'echo The app is Ready! && sleep 3600']
