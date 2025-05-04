@@ -22,8 +22,7 @@ nodes:
     hostPort: 443
     protocol: TCP
 
-```yaml
-
+---
 kind create cluster --name ingress-cluster --config kind-config.yaml
 
 # 2. Install NGINX Ingress Controller
@@ -42,6 +41,7 @@ kubectl create deployment demo --image=httpd --port=80
 kubectl expose deployment demo
 
 # 5. Create Ingress resource
+
 ```yaml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -59,7 +59,7 @@ spec:
             name: demo
             port:
               number: 80
-```yaml
+---
 
 # 6. Update hosts file (Linux/Mac)
 echo "127.0.0.1 demo.localdev.me" | sudo tee -a /etc/hosts
