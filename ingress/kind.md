@@ -1,5 +1,9 @@
 # 1. Create Kind cluster with Ingress support
-cat <<EOF > kind-config.yaml
+
+Create `kind-config.yaml`:
+
+```yaml
+
 kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 nodes:
@@ -17,7 +21,8 @@ nodes:
   - containerPort: 443
     hostPort: 443
     protocol: TCP
-EOF
+
+```yaml
 
 kind create cluster --name ingress-cluster --config kind-config.yaml
 
@@ -37,7 +42,7 @@ kubectl create deployment demo --image=httpd --port=80
 kubectl expose deployment demo
 
 # 5. Create Ingress resource
-cat <<EOF | kubectl apply -f -
+```yaml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
@@ -54,7 +59,7 @@ spec:
             name: demo
             port:
               number: 80
-EOF
+```yaml
 
 # 6. Update hosts file (Linux/Mac)
 echo "127.0.0.1 demo.localdev.me" | sudo tee -a /etc/hosts
