@@ -36,33 +36,9 @@ kubectl wait --namespace ingress-nginx \
 
 kubectl get pods -n ingress-nginx
 
-# 4. Create test application
-kubectl create deployment demo --image=httpd --port=80
-kubectl expose deployment demo
-
-# 5. Create Ingress resource
-
-```yaml
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: demo-ingress
-spec:
-  rules:
-  - host: demo.localdev.me
-    http:
-      paths:
-      - path: /
-        pathType: Prefix
-        backend:
-          service:
-            name: demo
-            port:
-              number: 80
----
 
 # 6. Update hosts file (Linux/Mac)
-echo "127.0.0.1 demo.localdev.me" | sudo tee -a /etc/hosts
+echo "127.0.0.1 example.com" | sudo tee -a /etc/hosts
 
 # 7. Test access
-curl -v http://demo.localdev.me
+curl -v http://example.com
