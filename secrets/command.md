@@ -66,7 +66,6 @@ spec:
   containers:
     - name: secret-test
       image: nginx
-      command: ['sh', '-c', 'echo "Username: $USER" "Password: $PASSWORD"']
       env:
         - name: USER
           valueFrom:
