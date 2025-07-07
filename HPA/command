@@ -1,0 +1,1 @@
+kubectl run cpu-loader --image=progrium/stress --restart=Never --stress --cpu 1 --timeout 60s
